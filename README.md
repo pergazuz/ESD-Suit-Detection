@@ -1,6 +1,6 @@
 # ESD-Suit-Detection
 ![PPE Detection](https://media.licdn.com/dms/image/C5612AQGa7wgjmpiYug/article-cover_image-shrink_423_752/0/1610814232977?e=1695254400&v=beta&t=5QeKXP8v1WGc7v_K_8J9zYiW-32V4EiRrrqI0AXfLF4)
-ESD Suit Detection leverages the power of YOLO V8 to precisely identify ESD suits in various scenarios, such as manufacturing facilities, clean rooms, or laboratories, where electrostatic discharge poses a significant risk.
+\nESD Suit Detection leverages the power of YOLO V8 to precisely identify ESD suits in various scenarios, such as manufacturing facilities, clean rooms, or laboratories, where electrostatic discharge poses a significant risk.
 
 
 ## Quick Start
