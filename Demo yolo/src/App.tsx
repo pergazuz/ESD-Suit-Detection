@@ -78,7 +78,7 @@ const App: React.FC = () => {
           </label>
           <input
             type="file"
-            className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+            className="file-input file-input-bordered file-input-sm file-input-primary w-full max-w-xs"
             id="image-upload"
             accept="image/*"
             onChange={handleFileChange}
@@ -104,7 +104,7 @@ const App: React.FC = () => {
                   onChange={handleCheckboxChange}
                   className="w-4 h-4 checkbox checkbox-primary"
                 />
-                <label htmlFor={obj} className="ml-2 text-gray-500">
+                <label htmlFor={obj} className="ml-2 text-sm text-gray-500">
                   {obj}
                 </label>
               </div>
