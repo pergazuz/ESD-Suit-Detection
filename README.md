@@ -12,29 +12,23 @@ Clone the repository with the following command:
 
 ```bash
 git clone https://github.com/pergazuz/ESD-Suit-Detection.git
+cd DEMO_Safety_Suite
 ```
 
-### Frontend Setup
+### Window
 Run in terminal this command:
 
 ```bash
-cd Demo yolo
 npm install
+run.bat
 ```
 
-Then run this command to start your local server
+### Mac
+Run in terminal this command:
 
 ```bash
-npm run dev
-```
-
-### API Setup
-Open a new terminal for run this command:
-
-Now, you can start the backend server with this command:
-
-```bash
-python YoloAPI.py
+npm install
+run.sh
 ```
 
 
