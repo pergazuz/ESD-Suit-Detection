@@ -19,7 +19,6 @@ cd DEMO_Safety_Suite
 Run in terminal this command:
 
 ```bash
-npm install
 run.bat
 ```
 
@@ -27,7 +26,6 @@ run.bat
 Run in terminal this command:
 
 ```bash
-npm install
 run.sh
 ```
 
