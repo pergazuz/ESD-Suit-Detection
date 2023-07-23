@@ -55,5 +55,5 @@ When you use TypeScript with React, you can write JSX with TypeScript, called TS
 ## Daisyui
 
 [daisyui](https://daisyui.com/) is adds component class names to Tailwind CSS, so you can make beautiful websites faster than ever.
-=======
+
 
