@@ -51,11 +51,9 @@ When you use TypeScript with React, you can write JSX with TypeScript, called TS
 ## Tailwind CSS
 
 [Tailwind CSS](https://tailwindcss.com) is modern utility-first CSS framework. It provides many CSS rules, but these are purged when production builds. So developers do not worry about CSS asset size for performance optimization.
-<<<<<<< HEAD
-
 
 ## Daisyui
 
 [daisyui](https://daisyui.com/) is adds component class names to Tailwind CSS, so you can make beautiful websites faster than ever.
 =======
->>>>>>> d57382e14fe60b13c09aba2e54f2bca3848a32e9
+
