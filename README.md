@@ -38,9 +38,9 @@ run.sh
 
 [React](https://es.reactjs.org) is a JavaScript library for building user interfaces.
 
-### Flask
+### FastAPI 
 
-[Flask](https://flask.palletsprojects.com/en/2.3.x/) is an extension for the Flask web framework that simplifies the process of building RESTful APIs .
+[FastAPI ](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
 
 ## TypeScript
 
@@ -51,3 +51,8 @@ When you use TypeScript with React, you can write JSX with TypeScript, called TS
 ## Tailwind CSS
 
 [Tailwind CSS](https://tailwindcss.com) is modern utility-first CSS framework. It provides many CSS rules, but these are purged when production builds. So developers do not worry about CSS asset size for performance optimization.
+
+
+## Daisyui
+
+[daisyui](https://daisyui.com/) is adds component class names to Tailwind CSS, so you can make beautiful websites faster than ever.

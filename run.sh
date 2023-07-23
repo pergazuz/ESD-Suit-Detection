@@ -4,4 +4,4 @@
 cd "Demo yolo" && npm install && npm run dev &
 
 # Start the backend server in a new terminal window
-osascript -e 'tell app "Terminal" to do script "cd .. && python YoloAPI.py"'
+osascript -e 'tell app "Terminal" to do script "cd .. && uvicorn YoloAPI:app --reload "'

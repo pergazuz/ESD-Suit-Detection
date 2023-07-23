@@ -1,14 +1,22 @@
-from flask import Flask, request, send_file
-from flask_cors import CORS
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from ultralytics import YOLO
+from ultralytics.yolo.utils.plotting import Annotator
 import os
 import io
 import cv2
 import numpy as np
-from ultralytics.yolo.utils.plotting import Annotator
 
-app = Flask(__name__)
-CORS(app, origins="*")
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = YOLO('YOLO_8_M_Ori.pt')
 
@@ -40,30 +48,18 @@ def predict(image, user_selected_objects,model):
 
     return annotator.result()
 
-@app.route('/predict', methods=['POST'])
-def handle_predict():
-    file = request.files['file']
-    user_selected_objects = request.form.getlist('selected_objects')  # Extract the selected_objects from form data
-    print(user_selected_objects)
-    frame = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
+@app.post("/predict")
+async def handle_predict(file: UploadFile = File(...), selected_objects: list = Form(...)):
+    file_bytes = await file.read()
+    frame = cv2.imdecode(np.frombuffer(file_bytes, np.uint8), cv2.IMREAD_COLOR)
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    result = predict(image, user_selected_objects, model)  # Pass the model to the predict function
-    result = cv2.cvtColor(result, cv2.COLOR_RGB2BGR)  # Convert the color back to BGR before encoding
+    result = predict(image, selected_objects, model)
+    result = cv2.cvtColor(result, cv2.COLOR_RGB2BGR)
     _, img_encoded = cv2.imencode('.png', result)
-
     img_bytes = io.BytesIO(img_encoded.tostring())
-  
-    return send_file(
-        img_bytes,
-        mimetype='image/png',
-        as_attachment=True,
-        download_name='result.png'
-    )
+    return StreamingResponse(img_bytes, media_type='image/png', headers={'Content-Disposition': 'attachment; filename=result.png'})
 
 
-@app.route('/')
+@app.get("/")
 def home():
     return "Welcome to the YOLO predictor!"
-
-if __name__ == "__main__":
-    app.run(debug=True)

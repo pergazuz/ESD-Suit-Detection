@@ -51,12 +51,12 @@ const App: React.FC = () => {
     objectsToSend.forEach((obj) => formData.append("selected_objects", obj));
 
     const response = await axios.post(
-      "http://localhost:5000/predict",
+      "http://localhost:8000/predict",
       formData,
       {
         responseType: "blob",
       },
-    );
+    );    
 
     const reader = new FileReader();
     reader.onloadend = () => {
